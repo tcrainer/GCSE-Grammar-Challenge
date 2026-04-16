@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #2563eb;
+  --color-bg-main: #f8fafc;
+  --color-sidebar: #ffffff;
+  --color-text-main: #1e293b;
+  --color-text-muted: #64748b;
+  --color-border-main: #e2e8f0;
+  --color-accent-main: #eff6ff;
+  --color-success-main: #10b981;
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-bg-main text-text-main font-sans antialiased;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-white border border-border-main rounded-2xl p-6 transition-all duration-200;
+  }
+  
+  .card-hover {
+    @apply hover:border-primary hover:shadow-lg hover:shadow-black/5;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-white px-4 py-2 rounded-lg font-semibold text-sm transition-opacity hover:opacity-90 disabled:opacity-50;
+  }
+
+  .btn-secondary {
+    @apply bg-slate-100 text-text-main px-4 py-2 rounded-lg font-semibold text-sm hover:bg-slate-200 transition-colors;
+  }
+
+  .input-field {
+    @apply border-b-2 border-slate-200 focus:border-primary outline-none px-1 py-0.5 transition-colors bg-transparent text-center min-w-[80px];
+  }
+
+  .input-correct {
+    @apply border-success-main text-success-main font-bold;
+  }
+
+  .input-incorrect {
+    @apply border-red-500 text-red-500 font-bold;
+  }
+}
